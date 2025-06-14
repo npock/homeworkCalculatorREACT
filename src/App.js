@@ -9,13 +9,21 @@ const ButtonClickOperands = ({
   operand2,
   operator,
   setShowRedTotal,
+  showRedTotal,
 }) => {
   const buttonClick = () => {
-    setShowRedTotal(false);
-    if (operator === "") {
+    if (showRedTotal) {
+      setOperand1(item);
+      setShowRedTotal(false);
+    } else if (operator === "") {
       setOperand1(operand1 + item);
     } else if (operator !== "") {
       setOperand2(operand2 + item);
+    }
+    if (operand1 === "0") {
+      setOperand1(item);
+    } else if (operand2 === "0") {
+      setOperand2(item);
     }
   };
   return (
@@ -27,12 +35,12 @@ const ButtonClickOperands = ({
 
 const OperatorsClickBottons = ({
   item,
+  operator,
   setOperator,
   setOperand1,
   setOperand2,
   operand2,
   operand1,
-  operator,
   setShowRedTotal,
 }) => {
   const operatorsButtonClick = () => {
@@ -85,7 +93,6 @@ function App() {
             setOperand1={setOperand1}
             operand2={operand2}
             setOperand2={setOperand2}
-            showRedTotal={showRedTotal}
             setShowRedTotal={setShowRedTotal}
           />
         ))}
@@ -100,6 +107,7 @@ function App() {
             operand2={operand2}
             operator={operator}
             setShowRedTotal={setShowRedTotal}
+            showRedTotal={showRedTotal}
           />
         ))}
       </div>
