@@ -24,12 +24,16 @@
   background-color: aqua;
 }
 
-.operands {
-  width: 100%;
+.operators {
+  width: 100px;
   border-collapse: collapse;
   width: 100%;
   margin: 20px 0;
   min-width: 100px;
+}
+.operator {
+  width: 40px;
+  height: 40px;
 }
 .screen {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
@@ -38,11 +42,6 @@
   justify-content: center;
   align-items: center;
 }
-.screenRed {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.red {
   color: red;
 }
